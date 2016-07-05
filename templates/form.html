@@ -1,0 +1,27 @@
+{% extends 'basis.html' %}
+{% block title %}Shortener{% endblock %}
+{% block content %}
+        <form method = "POST" action="{% url 'index' %}">
+            {{ url_form.as_p }}
+            <p><input type="submit" value="Send"></p>
+        </form>
+        <table border="1">
+            <tr>
+                <td>Original url</td>
+                <td>Short url</td>
+                <td>Date add</td>
+                <td>Clicks</td>
+                <td>Date click</td>
+            </tr>
+            {% for url in urls %}
+            <tr>
+                <td><a href="{{ url.original_url }}">{{ url.original_url }}</a></td>
+                <td><a href="{{ url.shorten_url }}">{{ url.shorten_url }}</a></td>
+                <td>{{ url.date_add }}</td>
+                <td>{{ url.clicks }}</td>
+                <td>{{ url.date_click }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {#        <p><a href="{% url 'index' %}">Finish</a></p>#}
+{% endblock %}

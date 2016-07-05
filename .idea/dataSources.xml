@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3028085709">
+    <data-source source="LOCAL" name="Sqlite (Xerial) - shortener.db" uuid="d163e264-7fce-4563-9517-03968b9e45db">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/shortener.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
