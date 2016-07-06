@@ -2,26 +2,26 @@
 {% block title %}Shortener{% endblock %}
 {% block content %}
         <form method = "POST" action="{% url 'index' %}">
+            <font color="red" size="3">{{ message }}</font>
             {{ url_form.as_p }}
-            <p><input type="submit" value="Send"></p>
+            <p><input type="submit" value="Short it!"></p>
         </form>
         <table border="1">
             <tr>
-                <td>Original url</td>
-                <td>Short url</td>
-                <td>Date add</td>
+                <td>Long URL</td>
+                <td>Created</td>
+                <td>Short URL</td>
+                <td>Latest click</td>
                 <td>Clicks</td>
-                <td>Date click</td>
             </tr>
             {% for url in urls %}
             <tr>
                 <td><a href="{{ url.original_url }}">{{ url.original_url }}</a></td>
+                <td>{{ url.date_add|date:"d-m-Y H:i" }}</td>
                 <td><a href="{{ url.shorten_url }}">{{ url.shorten_url }}</a></td>
-                <td>{{ url.date_add }}</td>
+                <td>{{ url.date_click|date:"d-m-Y H:i" }}</td>
                 <td>{{ url.clicks }}</td>
-                <td>{{ url.date_click }}</td>
             </tr>
             {% endfor %}
         </table>
-    {#        <p><a href="{% url 'index' %}">Finish</a></p>#}
 {% endblock %}
